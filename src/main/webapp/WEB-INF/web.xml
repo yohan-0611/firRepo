@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" id="WebApp_ID" version="5.0">
+  <display-name>prj3</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+  <context-param>
+    <description>페이징 처리를 위한 값 설정(페이지당 글수)</description>
+    <param-name>POSTS_PER_PAGE</param-name>
+    <param-value>10</param-value>
+  </context-param>
+  <context-param>
+    <description>페이징 처리를 위한 값 설정(BLOCK 당 페이지수)</description>
+    <param-name>PAGES_PER_BLOCK</param-name>
+    <param-value>5</param-value>
+  </context-param>
+  <context-param>
+    <description>업다운 경로</description>
+    <param-name>folderName</param-name>
+    <param-value>D:/uploads</param-value>
+  </context-param>
+  
+  <resource-ref>
+    <description>Oracle Datasource example</description>
+    <res-ref-name>jdbc/myoracle</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+  </resource-ref>
+  
+  <servlet>
+    <description>파일컨트롤러</description>
+    <display-name>FileController</display-name>
+    <servlet-name>FileController</servlet-name>
+    <servlet-class>Prj4.controllers.FileController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FileController</servlet-name>
+    <url-pattern>/FileController</url-pattern>
+    <url-pattern>/multipleProc.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <display-name>ViewController</display-name>
+    <servlet-name>ViewController</servlet-name>
+    <servlet-class>Prj4.controllers.ViewController</servlet-class>
+  </servlet>
+  
+
+<servlet-mapping>
+    <servlet-name>ViewController</servlet-name>
+     <url-pattern>/ViewController</url-pattern>
+    <url-pattern>/model2/view.do</url-pattern>
+</servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>ListControllers</display-name>
+    <servlet-name>ListControllers</servlet-name>
+    <servlet-class>Prj4.controllers.ListControllers</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>ListControllers</servlet-name>
+    <url-pattern>/ListControllers</url-pattern>
+    <url-pattern>/model2/list.do</url-pattern>
+  </servlet-mapping>  
+  
+   <servlet>
+    <description></description>
+    <display-name>WriteControllers</display-name>
+    <servlet-name>WriteControllers</servlet-name>
+    <servlet-class>Prj4.controllers.WriteControllers</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>WriteControllers</servlet-name>
+    <url-pattern>/WriteControllers</url-pattern>
+    <url-pattern>/write.do</url-pattern>
+  </servlet-mapping> 
+  
+   <servlet>
+    <description></description>
+    <display-name>DelControllers</display-name>
+    <servlet-name>DelControllers</servlet-name>
+    <servlet-class>Prj4.controllers.DelControllers</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>DelControllers</servlet-name>
+    <url-pattern>/DelControllers</url-pattern>
+    <url-pattern>/delete.do</url-pattern>
+  </servlet-mapping> 
+  
+  <servlet>
+    <description></description>
+    <display-name>UpControllers</display-name>
+    <servlet-name>UpControllers</servlet-name>
+    <servlet-class>Prj4.controllers.UpControllers</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>UpControllers</servlet-name>
+    <url-pattern>/UpControllers</url-pattern>
+    <url-pattern>/update.do</url-pattern>
+  </servlet-mapping> 
+  
+   
+  
+  
+</web-app>
